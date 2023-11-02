@@ -40,7 +40,12 @@ function feedBack({email, subject, feedbacktext}){
     return;
 }
 
-function logedIn(email, date, time){
+function logedIn(email){
+    var datetime = new Date();
+    date = datetime.toISOString().slice(0,10);
+    const hours = datetime.getHours();
+    const minutes = datetime.getMinutes();
+    const time = `${hours}:${minutes}`;
     connection.query(`insert into log (email,date,time) value ("${email}","${date}","${time}")`);
 }
 

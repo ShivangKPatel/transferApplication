@@ -41,14 +41,7 @@ app.post('/signin', async function (req, res) {
     console.log(logedInUserData);
     if (logedInUserData.length != 0) {
         if (logedInUserData[0].userpass == checkData.password) {
-            var datetime = new Date();
-            date = datetime.toISOString().slice(0,10);
-            const hours = datetime.getHours();
-            const minutes = datetime.getMinutes();
-            const time = `${hours}:${minutes}`;
-            console.log(date," ",time);
-            console.log(checkData.email);
-            DB.logedIn(checkData.email,date,time);
+            DB.logedIn(checkData.email);
             res.render("templates/home")
         }
         else {
@@ -65,14 +58,14 @@ app.get('/signup', function (req, res) {
 });
 
 app.get('/about', function (req, res) {
-        res.render('templates/about', { access: 0, submitted: 0 });
+    res.render('templates/about', { access: 0, submitted: 0 });
 });
 
 app.post('/about', async function (req, res) {
     feedBackData = req.body;
     await DB.feedBack(feedBackData);
     res.render('templates/about', { access: 0, submitted: 1 });
-    
+
 });
 
 app.listen(port, () => {
