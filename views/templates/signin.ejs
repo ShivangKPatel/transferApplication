@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signin</title>
+    <link rel="stylesheet" href="signup.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="outer-box">
+        <div class="inner-box">
+            <header class="signup-header">
+                <h1>Signin</h1>
+            </header>
+            <main class="signup-body">
+                <form action="/signin" method="post">
+                    <% if(flag == 1) { %>
+                        <div class="alert alert-danger" role="alert">
+                            Account does not exisit. plase create a one to login.
+                        </div>
+                    <% } else if(flag == 2) {%>  
+                        <div class="alert alert-danger" role="alert">
+                            Please enter valid username and password.
+                        </div>
+                    <% } %>
+                        <p>
+                        <label for="Username">Username</label></p>
+                     <p> <input type="text" id="username" placeholder="Your name" required name="username">
+                    </p>
+                    <p>
+                        <label for="email">Email ID</label>
+                    </p><p><input type="email" id="email" placeholder="xyz@gamil.com" required name="email">
+                    </p>
+                    <p>
+                        <label for="password">Your Password</label>
+                    </p>
+                    <p>  <input type="password" id="password" placeholder="xyz?125" required name="password">
+                    
+                        <label for="select">signin as</label>
+                    </p>
+                    <p>
+                        <select id="select" name="role">
+                            <option value="Student">User</option>
+                            <option value="University">University</option>
+                            <option value="Government">Government</option>                        
+                        </select>
+                    </p>
+                    </p>
+                        <a href="#">forget password?</a>
+                    <p>
+                    <p>
+                        <button type="submit"> sigin </button>
+                        <!-- <input type="submit" id="Login" value="Signin" required> -->
+                    </p>
+                </form>
+            </main>
+            <footer class="signup-footer">
+                <p>Don't have an account?<a href="/signup">Signup</a> </p>
+
+            </footer>
+        </div>
+        <div class="circle c1"></div>
+        <div class="circle c2"></div>
+    </div>
+
+</body>
+
+</html>

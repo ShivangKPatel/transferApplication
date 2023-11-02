@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+    <div class="outer-box">
+        <div class="inner-box">
+            <header class="signup-header">
+                <h1>Signup</h1>
+            </header>
+            <main class="signup-body">
+                <form action="/signup" method="post">
+                    <p> <label for="firstname">First name</label> </p>
+                    <p> <input type="text" id="firstname" placeholder="First name" name="firstname" required> </p>
+                    <p> <label for="middlename">Middle name</label> </p>
+                    <p> <input type="text" id="middlename" placeholder="Middle name" name="middlename" required> </p>
+                    <p> <label for="lastname">Last name</label> </p>
+                    <p> <input type="text" id="lastname" placeholder="Last name" name="lastname" required> </p>
+                    <p> <label for="contactno">Contact no</label> </p>
+                    <p> <input type="contactno" id="contactno" placeholder="1234567890" name="contactno" required> </p>
+                    <p> <label for="email">Email ID</label> </p>
+                    <p> <input type="email" id="email" placeholder="xyz@gamil.com" required name="email"> </p>
+                    <p> <label for="password">Your Password</label> </p>
+                    <p> <input type="password" id="password" placeholder="xyz?125" required name="password"> </p>
+                    <p> <label for="select">Register as</label> </p>
+                    <p>
+                        <select id="select" name="select">
+                            <option value="Student">Student</option>
+                            <option value="University">University</option>
+                            <option value="Government">Government</option>
+                        </select>
+                    </p>
+                    <!-- <p> <input type="submit" id="submit" value="Submit" required> </p> -->
+                    <button type="submit" id="submit" value="Submit">Submit</button>
+                </form>
+            </main>
+            <footer class="signup-footer">
+                <p>Already have an account?<a href="login.html"> Signin</a> </p>
+
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
