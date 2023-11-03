@@ -1,4 +1,5 @@
 const bodyParser = require('body-parser');
+const { response } = require('express');
 const express = require('express');
 const Window = require('window');
 const DB = require(__dirname + "/routes/db.js");
@@ -41,6 +42,9 @@ app.post('/signup', function(req, res) {
     res.redirect("/signin");
 });
 
+app.get('/collagelist',function(req,res){
+    res.render("templates/collagelist")
+})
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}/`);
 });
