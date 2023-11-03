@@ -75,6 +75,10 @@ app.get('/studentform2',function (req, res){
     res.render('templates/studentform2',{log : logedInUserData}); 
 })
 
+app.get('/document',function (req, res){
+    res.render('templates/document',{log : logedInUserData}); 
+})
+
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}/`);
 })
