@@ -3,49 +3,116 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>signup</title>
-    <link rel="stylesheet" href="signup.css">
+    <title>Sign Up</title>
 </head>
 
 <body>
-    <div class="outer-box">
-        <div class="inner-box">
-            <header class="signup-header">
-                <h1>Signup</h1>
-            </header>
-            <main class="signup-body">
-                <form action="/signup" method="post">
-                    <p> <label for="firstname">First name</label> </p>
-                    <p> <input type="text" id="firstname" placeholder="First name" name="firstname" required> </p>
-                    <p> <label for="middlename">Middle name</label> </p>
-                    <p> <input type="text" id="middlename" placeholder="Middle name" name="middlename" required> </p>
-                    <p> <label for="lastname">Last name</label> </p>
-                    <p> <input type="text" id="lastname" placeholder="Last name" name="lastname" required> </p>
-                    <p> <label for="contactno">Contact no</label> </p>
-                    <p> <input type="contactno" id="contactno" placeholder="1234567890" name="contactno" required> </p>
-                    <p> <label for="email">Email ID</label> </p>
-                    <p> <input type="email" id="email" placeholder="xyz@gamil.com" required name="email"> </p>
-                    <p> <label for="password">Your Password</label> </p>
-                    <p> <input type="password" id="password" placeholder="xyz?125" required name="password"> </p>
-                    <p> <label for="select">Register as</label> </p>
-                    <p>
-                        <select id="select" name="select">
-                            <option value="Student">Student</option>
-                            <option value="University">University</option>
-                            <option value="Government">Government</option>
-                        </select>
-                    </p>
-                    <!-- <p> <input type="submit" id="submit" value="Submit" required> </p> -->
-                    <button type="submit" id="submit" value="Submit">Submit</button>
-                </form>
-            </main>
-            <footer class="signup-footer">
-                <p>Already have an account?<a href="login.html"> Signin</a> </p>
+    <%- include('header')%>
+        <style>
+            h1 {
+                margin-left: 130px;
+                margin-bottom: 20px;
+                font-weight: 700;
+                color: whitesmoke;
+            }
+            
+            #signupBox {
+                box-shadow: 20px 20px 40px #104c7ad4;
+                border-radius: 10px;
+                max-width: 620px;
+                margin-top: 70px;
+                padding: 50px;
+                background-color: #2294ed;
+            }
+            
+            #NavBar {
+                box-shadow: 0px 0px 40px #2294ed;
+            }
+            
+            footer p {
+                color: white;
+            }
+            
+            footer p a {
+                color: bisque;
+                text-decoration: none;
+            }
+        </style>
+        <form class="container" id="signupBox" action="/signup" method="post">
+            <h1>Registration</h1>
+            <div class="row">
+                <div class="col">
+                    <div class="form-floating mb-4">
+                        <input type="text" class="form-control" placeholder="First name" aria-label="First name" required name="firstname">
+                        <label for="floatingInput">First name</label>
+                    </div>
+                </div>
+                <div class="col">
 
+                    <div class="form-floating mb-4">
+                        <input type="text" class="form-control" placeholder="Middle name" aria-label="Middle name" required name="middlename">
+                        <label for="floatingInput">Middle name</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating mb-4">
+                        <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" required name="lastname">
+                        <label for="floatingInput">Last name</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-floating mb-4">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required name="email">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="input-group has-validation mb-4">
+                <div class="form-floating is-invalid">
+                    <input type="password" class="form-control" id="passwordPF" placeholder="Password" required name="password" style="border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
+                    <label for="passwordPF">Password</label>
+                </div>
+                <button style="border-radius: 0.375rem; border-top-left-radius: 0px; border-bottom-left-radius: 0px; cursor:pointer;" onclick="showPass();" type="button" class="input-group-text">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 17 17" style="margin-bottom: 2px;">
+                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+            </svg>
+        </button>
+            </div>
+            <div class="input-group mb-4">
+                <span class="input-group-text">+91</span>
+                <div class="form-floating">
+                    <input type="number" class="form-control" id="floatingInputGroup1" placeholder="contactno" required name="contactno" maxlength="10" minlength="10">
+                    <label for="floatingInputGroup1">contact no</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating mb-4">
+                    <select class="form-select" id="floatingSelectGrid" required name="select">
+            <option selected value="0">Student</option>
+            <option value="1">University</option>
+            <option value="2">Government</option>
+          </select>
+                    <label for="floatingSelectGrid">Register as</label>
+                </div>
+            </div>
+            <div class="d-grid gap-2 col-3 mx-auto">
+                <button class="btn btn-dark" type="submit">Submit</button>
+            </div>
+            <footer class="signup-footer d-grid col-8 mx-auto" style="padding-left: 20px; ">
+                <p>Already have an account? <a href="/signin"> Signin</a> </p>
             </footer>
-        </div>
-    </div>
+        </form>
 </body>
+<script>
+    function showPass() {
+        const x = document.getElementById("passwordPF");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
 
 </html>

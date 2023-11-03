@@ -6,62 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
     <link rel="stylesheet" href="index.css">
-    <style>
-        #footer {
-            background-color: #2294ed;
-            color: white;
-            text-align: center;
-            position: fixed;
-            letter-spacing: 2px;
-            word-spacing: 5px;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
 </head>
 
 <body>
-    <!--top-banner-->
     <div class="top-banner">
         <div class="container">
             <div class="small-bold-text banner-text">Website name</div>
         </div>
     </div>
-    <!--nav bar-->
-    <nav>
-        <div class="container main-nav flex">
-            <a href="#" class="company-logo">
-                <img src="logo.png" alt="company-logo">
-            </a>
-            <div class="nav-links ">
-                <ul class="flex">
-                    <li><a href="/home" class="hover-links">Home</a></li>
-                    <li><a href="#" class="hover-links">Find College</a></li>
-                    <li><a href="#" class="hover-links">Help</a></li>
-                    <li><a href="#" class="hover-links">About</a></li>
-                    <li><a href="/signin" class="hover-links secondary-button">Sign in</a></li>
-                    <li><a href="/signup" class="hover-links primary-button">Sign up</a></li>
-                </ul>
-
+    <%- include('header') %>
+        <!--top-banner-->
+        <style>
+            .top-banner {
+                background-image: url('./images/asset\ 32.png');
+                background-color: #4fb3d4;
+                background-size: 300px;
+            }
+            
+            .banner-text {
+                color: white;
+                padding: 10px 30px;
+                text-align: center;
+            }
+            
+            .container {
+                display: flex;
+                justify-content: center;
+            }
+            
+            .container h1 {
+                margin-top: 150px;
+            }
+            
+            .image img {
+                width: 600px;
+                margin-top: 40px;
+                margin-left: 140px;
+            }
+            
+            #footer {
+                background-color: #2294ed;
+                color: white;
+                text-align: center;
+                position: fixed;
+                letter-spacing: 2px;
+                word-spacing: 5px;
+                bottom: 0;
+                width: 100%;
+                padding: 10px;
+                font-size: 20px;
+            }
+            
+            #NavBar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px 130px;
+            }
+        </style>
+        <!--header section-->
+        <header>
+            <div class="container header-section flex">
+                <div>
+                    <h1>Seamless Transfers</h1>
+                    <p>"Elevate Your College Journey!"</p>
+                    <button class="btn btn-primary" type="submit"> <a href="/signin" style="color: aliceblue;text-decoration: none;">Get Started</a></button>
+                </div>
+                <div class="image">
+                    <img src="images/asset 2.jpeg" alt="hero image">
+                </div>
             </div>
-        </div>
-    </nav>
-    <!--header section-->
-    <header>
-        <div class="container header-section flex">
-            <div class="header-left">
-                <h1>Seamless Transfers</h1>
-                <p>"Elevate Your College Journey!"</p>
-                <a href="#" class="primary-button ">Get Started</a>
-            </div>
-            <div class="header-right">
-                <img src="images/asset 2.jpeg" alt="hero image">
-            </div>
-        </div>
-    </header>
-    <footer>
-        <div class="small-bold-text banner-text" id="footer">Contact us : xxxxxxxxxx</div>
-    </footer>
+        </header>
+        <footer>
+            <div class="small-bold-text banner-text" id="footer">Contact us : xxxxxxxxxx</div>
+        </footer>
 </body>
 
 </html>

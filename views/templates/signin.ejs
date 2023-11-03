@@ -2,59 +2,99 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>signin</title>
-    <link rel="stylesheet" href="signup.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in</title>
 </head>
 
 <body>
-    <div class="outer-box">
-        <div class="inner-box">
-            <header class="signup-header">
-                <h1>Signin</h1>
-            </header>
-            <main class="signup-body">
-                <form action="#">
-                    <p>
-                        <label for="Username">Username</label></p>
-                     <p> <input type="text" id="Username" placeholder="Your name" required>
-                    </p>
-                    <p>
-                        <label for="email">Email ID</label>
-                    </p><p><input type="email" id="email" placeholder="xyz@gamil.com" required>
-                    </p>
-                    <p>
-                        <label for="password">Your Password</label>
-                    </p>
-                    <p>  <input type="password" id="password" placeholder="xyz?125" required>
-                    
-                        <label for="select">signin as</label>
-                    </p>
-                    <p>
-                        <select id="select">
-                            <option value="User">User</option>
-                            <option value="University">University</option>
-                            <option value="Government">Government</option>                        
-                        </select>
-                    </p>
-                    </p>
-                        <a href="#">forget password?</a>
-                    <p>
-                    <p>
-                        <input type="submit" id="Login" value="Signin" required>
-                    </p>
-                </form>
-            </main>
-            <footer class="signup-footer">
-                <p>Don't have an account?<a href="signup.html">Signup</a> </p>
-
+    <%- include('header')%>
+        <style>
+            h1 {
+                margin-left: 180px;
+                margin-bottom: 20px;
+                font-weight: 700;
+                color: whitesmoke;
+            }
+            
+            #signinBox {
+                box-shadow: 10px 10px 40px black;
+                border-radius: 10px;
+                max-width: 620px;
+                margin-top: 70px;
+                padding: 50px;
+                background-color: #2294ed;
+            }
+            
+            #NavBar {
+                box-shadow: 0px 0px 100px black;
+            }
+            
+            footer p {
+                color: white;
+            }
+            
+            footer p a {
+                color: bisque;
+                text-decoration: none;
+            }
+        </style>
+        <form class="container" id="signinBox" action="/signin" method="post">
+            <h1>Sign in</h1>
+            <div class="form-floating mb-4">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required name="email" />
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="input-group has-validation mb-4">
+                <div class="form-floating is-invalid">
+                    <input type="password" class="form-control" id="passwordPF" placeholder="Password" required name="password" style="
+              border-top-right-radius: 0px;
+              border-bottom-right-radius: 0px;
+            " />
+                    <label for="passwordPF">Password</label>
+                </div>
+                <button style="
+            border-radius: 0.375rem;
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+            cursor: pointer;
+          " onclick="showPass();" type="button" class="input-group-text">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-eye-fill" viewBox="0 0 17 17" style="margin-bottom: 2px">
+                        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                        <path
+                            d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="col-md">
+                <div class="form-floating mb-4">
+                    <select class="form-select" id="floatingSelectGrid" required name="select">
+                        <option selected>Student</option>
+                        <option value="1">University</option>
+                        <option value="2">Government</option>
+                    </select>
+                    <label for="floatingSelectGrid">Register as</label>
+                </div>
+            </div>
+            <div class="login d-grid gap-2 col-3 mx-auto">
+                <button class="btn btn-dark" type="submit">Login</button>
+            </div>
+            <footer class="signup-footer d-grid col-6 mx-auto" style="padding-left: 20px">
+                <p>Don't have an account? <a href="/signup"> Signup</a></p>
             </footer>
-        </div>
-        <div class="circle c1"></div>
-        <div class="circle c2"></div>
-    </div>
-
+        </form>
 </body>
+<script>
+    function showPass() {
+        const x = document.getElementById("passwordPF");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
 
 </html>
