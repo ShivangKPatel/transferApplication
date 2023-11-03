@@ -36,13 +36,12 @@ app.get('/signin', function (req, res) {
 
 app.post('/signin', async function (req, res) {
     checkData = req.body;
-    console.log(checkData);
     logedInUserData = await DB.isLogin(checkData);
-    console.log(logedInUserData);
     if (logedInUserData.length != 0) {
-        if (logedInUserData[0].userpass == checkData.password) {
+    logedInUserData = logedInUserData[0];
+        if (logedInUserData.userpass == checkData.password) {
             DB.logedIn(checkData.email);
-            res.render("templates/home")
+            res.render("templates/studentform")
         }
         else {
             res.render("templates/signin", { flag: 2 })
@@ -61,12 +60,20 @@ app.get('/about', function (req, res) {
     res.render('templates/about', { access: 0, submitted: 0 });
 });
 
-app.post('/about', async function (req, res) {
+app.post('/about', function (req, res) {
     feedBackData = req.body;
-    await DB.feedBack(feedBackData);
+    DB.feedBack(feedBackData);
     res.render('templates/about', { access: 0, submitted: 1 });
 
 });
+
+app.get('/studentform',function (req, res){
+    res.render('templates/studentform',{log : logedInUserData}); 
+})
+
+app.get('/studentform2',function (req, res){
+    res.render('templates/studentform2',{log : logedInUserData}); 
+})
 
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}/`);

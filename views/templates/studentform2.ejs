@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Transfer Application</title>
+    <!-- Add Bootstrap CSS link here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5" style="width: 60%;">
+        <h1>College Transfer Application</h1>
+        <form id="transferApplicationForm" methon="post">
+            <div class="form-group">
+                <label for="previousUniversity">Previous University:</label>
+                <select class="form-control" id="previousUniversity" name="previousUniversity" required>
+                    <option value="" selected disabled>Select your previous university</option>
+                    <option value="University A">DAIICT</option>
+                    <option value="University B">DDIT</option>
+                    <option value="University C">Charusat</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="reasonForTransfer">Reason for Transfer:</label>
+                <textarea class="form-control" id="reasonForTransfer" name="reasonForTransfer" rows="3" placeholder="Enter Reason for Transfer Collage..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Application</button>
+        </form>
+    </div>
+
+    <!-- Add Bootstrap and jQuery JS scripts here -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script>
+        // Add form validation using JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.getElementById('transferApplicationForm');
+            form.addEventListener('submit', function(event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            });
+        });
+    </script>
+</body>
+</html>

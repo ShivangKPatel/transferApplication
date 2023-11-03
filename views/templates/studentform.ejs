@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <h1 style="text-align: center;">Student Form</h1>
+    <div class="container">
+        <form class="row g-3" action="/studentform2" method="post">
+            <div class="col-md-4">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+
+            <div class="col-md-4">
+                <label for="fname" class="form-label">Father's Name</label>
+                <input type="text" class="form-control" id="fname" name="fname" required>
+            </div>
+
+            <div class="col-md-4">
+                <label for="mname" class="form-label">Mother's Name</label>
+                <input type="text" class="form-control" id="mname" name="mname" required>
+            </div>
+
+            <div class="col-md-4">
+                <label for="inputState" class="form-label">Gender</label>
+                <select id="inputState" class="form-select" required>
+                    <option selected disabled>Choose...</option>
+                    <option value="male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label for="date" class="form-label">Date of Birth</label>
+                <input type="date" class="form-control" id="date" name="date" required>
+            </div>
+
+            <div class="col-md-4">
+                <label for="category" class="form-label">Category</label>
+                <select id="category" class="form-select" required>
+                    <option selected disabled>Choose...</option>
+                    <option value="general">General</option>
+                    <option value="sc">Scheduled Cast (SC)</option>
+                    <option value="st">Scheduled Tribes (ST)</option>
+                    <option value="obc">Other Backward Classes (OBC)</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label for="phy" class="form-label">Physically Handicapped</label>
+                <select id="phy" class="form-select">
+                    <option selected>No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label for="service" class="form-label">Ex/IN-Serviceman</label>
+                <select id="service" class="form-select">
+                    <option selected>No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label for="tfw" class="form-label">Tuition Fee Waiver</label>
+                <select id="tfw" class="form-select">
+                    <option selected>No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label for="tfw" class="form-label">Family Annual Income</label>
+                <select id="tfw" class="form-select">
+                    <option value="lakh3" selected>0.1 lakh to 2.5 lakh</option>
+                    <option value="lakh2">2.5 lakh to 8 lakh</option>
+                    <option value="lakh3">8 lakh and above</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label for="category" class="form-label">Category</label>
+                <select id="category" class="form-select" required>
+                    <option selected disabled>Choose...</option>
+                    <option value="degree">Technical(Degree)</option>
+                    <option value="diploma">Technical(Diploma)</option>
+                    <option value="medical">Medical</option>
+                    <option value="higher">Higher</option>
+                    <option value="agriculture">Agriculture</option>
+                    <option value="veterinary">Veterinary</option>
+                    <option value="ayurved">Ayurved</option>
+                    <option value="nursing">Nursing</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label for="inputEmail4" class="form-label">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" name="email" required>
+            </div>
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">Address</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
+            </div>
+            <div class="col-md-4">
+                <label for="inputCity" class="form-label">City</label>
+                <input type="text" class="form-control" id="inputCity" name="cty" required>
+            </div>
+
+            <div class="col-md-4">
+                <label for="inputCity" class="form-label">Phone Number</label>
+                <input type="tel" id="phone" class="form-control" name="phone" pattern="[0-9]{10}"
+                    placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" required>
+                <label class="form-check-label" for="flexCheckIndeterminate">
+                    I hereby declare that all the particulars given by me in this form are true to the best of my
+                    knowledge and belief. Any mistake / misinformation, detected atthe time of admission or at any stage
+                    in future, will result in the cancellation of admission. I have read the information bulletin and
+                    understood all theprocedures.
+                </label>
+            </div>
+
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary"><a href="studentform2"
+                        style="text-decoration: none; color: aliceblue;">Submit</a></button>
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-secondary">Clear ✘</button>
+            </div>
+        </form>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+
+</html>
