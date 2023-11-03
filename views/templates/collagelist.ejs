@@ -5,29 +5,57 @@
 </head>
 <body>
     <%- include('header') %>
-    <h1>Sample Table</h1>
-    <table border="1">
-        <tr>
-            <th>College Name</th>
-            <th>Location</th>
-            <th>Programs</th>
-        </tr>
-        <tr>
-            <td>College Name 1</td>
-            <td>Location 1</td>
-            <td>Program A, Program B</td>
-        </tr>
-        <tr>
-            <td>College Name 2</td>
-            <td>Location 2</td>
-            <td>Program X, Program Y</td>
-        </tr>
-        <tr>
-            <td>College Name 3</td>
-            <td>Location 3</td>
-            <td>Program M, Program N</td>
-        </tr>
-        <!-- Add more rows for additional colleges -->
+    <style>
+        section{
+            margin-top: 50px;
+            margin-bottom: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            border-width: 2px;
+            border-radius: 4px;
+            border-style: solid;
+            border-color: black;
+            padding: 10px;
+            box-shadow: 10px 10px 10px black ;
+        }
+        thead{
+            color: white;
+            background-color: black;
+        }
+    </style>
+    <section>
+
+        <table class="table table-striped">
+            <thead>
+            <tr class="table-dark">
+              <th scope="col">Sr no.</th>
+              <th scope="col">University name</th>
+              <th scope="col">Location</th>
+              <th scope="col">Website</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+              <th scope="row">1</th>
+              <td>Charotar University of Science and Technology </td>
+              <td>Anand,Gujarat</td>
+              <td><a href="https://www.charusat.ac.in/">https://www.charusat.ac.in/</a></td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Dharamsinh Desai University</td>
+              <td>Nadiad,Gujarat</td>
+              <td><a href="https://www.ddu.ac.in/">https://www.ddu.ac.in/</a></td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Dhirubhai Ambani Institute of Information and Communication Technology</td>
+                <td>Gandhinagar,Gujarat</td>
+                <td><a href="https://www.daiict.ac.in/">https://www.daiict.ac.in/</a></td>
+            </tr>
+        </tbody>
     </table>
+</section>
 </body>
 </html>
